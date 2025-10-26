@@ -8,9 +8,8 @@ alert("Descubrí cuál es tu animal espiritual según tu mes y día de nacimient
 
 let nombre = prompt("¿Cuál es tu nombre?");
 
-function saludo(nombre) {
-    alert("Hola " + nombre + "¡Bienvenido a mi primera entrega en CoderHouse!");
-}
+//Función 1 ---- función flecha
+const saludo = (nombre) => {alert("Hola " + nombre + "¡Bienvenido a mi primera entrega en CoderHouse!");};
 
 //Creo los Arrays
 //Array de animales según el mes solicitado en número
@@ -33,7 +32,7 @@ let mes = parseInt(prompt("Ingrese el número de su mes de nacimiento"));
 //en el While uso 3 condiciones que de ser verdaderas vuelve a solicitarle al usuario el mes en el formato que solicité en el prompt
 
 let diaSemana = prompt("Ingrese el día de la semana en que nació (Ej: Lunes, Martes, Miércoles, Jueves, Viernes, Sábado, Domingo)").toLowerCase(); //uso el lowerCase para transformar todo a minúsuclas
-
+//función 2 ---- funcion tradicional que le pone acento al miércoles o jueves si el usuario los escribe sin acento
     function diaConAcento(diaSemana){
         if (diaSemana === "miercoles"){
             diaSemana = "miércoles";
