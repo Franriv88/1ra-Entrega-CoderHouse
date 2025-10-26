@@ -4,9 +4,13 @@
 //3: Agregar los ciclos de iteración y/o condicionales necesarios, para que tu proyecto fujncione correctamente
 //4: Integerar el uso de Consola JS y de los cuadros de diálogo Prompt, Confirm y Alert
 
-alert("¡Bienvenido a mi primera entrega en CoderHouse!");
 alert("Descubrí cuál es tu animal espiritual según tu mes y día de nacimiento.");
 
+let nombre = prompt("¿Cuál es tu nombre?");
+
+function saludo(nombre) {
+    alert("Hola " + nombre + "¡Bienvenido a mi primera entrega en CoderHouse!");
+}
 
 //Creo los Arrays
 //Array de animales según el mes solicitado en número
@@ -16,6 +20,8 @@ const animal = ["🐲 Dragón", "🦦 Carpincho", "🐂 Toro", "🦄 Unicornio",
 const adjetivo = ["peludo", "asmático", "petizo", "vegano", "filósofo", "dramático", "insoportable"];
 
 let respuesta;
+
+
 
 do{
     //Solicito el nro de mes para luego acceder al array de animales
@@ -74,7 +80,7 @@ let diaSemana = prompt("Ingrese el día de la semana en que nació (Ej: Lunes, M
             break;
     }
 
-    let resultadoFinal = "Tu animal espiritual es el " + animal[mes-1] + " " + adjetivo[diaSemana];
+    let resultadoFinal = nombre + "!" + " Tu animal espiritual es el " + animal[mes-1] + " " + adjetivo[diaSemana]; //descubrí que se puede guardar el mensaje final en una variable y no obligatorimente en el console.log
     console.log(resultadoFinal);
     //alert(resultadoFinal);  Muestras el resultado también en el alert! (no sabía esto!!)
 
@@ -93,7 +99,7 @@ let diaSemana = prompt("Ingrese el día de la semana en que nació (Ej: Lunes, M
 
 
 
-// COSAS QUE HICE ANTES Y MODIFIQUÉ PORQUE NO ME GUSTARON
+// ---------- COSAS QUE HICE ANTES Y MODIFIQUÉ PORQUE NO ME GUSTARON ------------------- //
 
     //Accedo a los arrays y los concateno en la respuesta
     // console.log("Tu animal espiritual es el " + animal[mes-1] + " " + adjetivo[diaSemana] );
