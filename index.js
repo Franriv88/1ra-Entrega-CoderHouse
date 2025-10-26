@@ -5,8 +5,20 @@
 //4: Integerar el uso de Consola JS y de los cuadros de diálogo Prompt, Confirm y Alert
 
 alert("¡Bienvenido a mi primera entrega en CoderHouse!");
+alert("Descubrí cuál es tu animal espiritual según tu mes y día de nacimiento.");
 
-//Solicito el nro de mes para luego acceder al array de animales
+
+//Creo los Arrays
+//Array de animales según el mes solicitado en número
+const animal = ["🐲 Dragón", "🦦 Carpincho", "🐂 Toro", "🦄 Unicornio", "🐅 Tigre", "🦁 León", "🦟 Mosquito", "🐺 Lobo", "🦅 Cóndor", "Guanaco", "🐎 Caballo", "🐬 Delfín"];
+
+//Array de adjetivos según el día de la semana, solicitado en letras pero convertido a números en el switch
+const adjetivo = ["peludo", "asmático", "petizo", "vegano", "filósofo", "dramático", "insoportable"];
+
+let respuesta;
+
+do{
+    //Solicito el nro de mes para luego acceder al array de animales
 let mes = parseInt(prompt("Ingrese el número de su mes de nacimiento"));
     while (isNaN(mes)|| mes<1 || mes>12){ //con el while pido el dato para el mes hasta que ingese uno válido.
         alert("Debe ingresar un número válido para el mes.");
@@ -27,8 +39,6 @@ let diaSemana = prompt("Ingrese el día de la semana en que nació (Ej: Lunes, M
     }
 
     diaSemana = diaConAcento(diaSemana); //guardo el valor retornado por la función en la variable diaSemana
-
-    // console.log(diaConAcento(diaSemana));
 
     while (diaSemana != "lunes" && diaSemana != "martes" && diaSemana != "miércoles" && diaSemana != "jueves" && diaSemana != "viernes" && diaSemana != "sábado" && diaSemana != "domingo"){
         alert("Debe ingresar un día de la semana válido.");
@@ -64,15 +74,33 @@ let diaSemana = prompt("Ingrese el día de la semana en que nació (Ej: Lunes, M
             break;
     }
 
-    // console.log("Mes ingresado: " + mes);
-    // console.log("Día de la semana ingresado: " + diaSemana);
+    let resultadoFinal = "Tu animal espiritual es el " + animal[mes-1] + " " + adjetivo[diaSemana];
+    console.log(resultadoFinal);
+    //alert(resultadoFinal);  Muestras el resultado también en el alert! (no sabía esto!!)
 
-    //Creo los Arrays
-    //Array de animales según el mes solicitado en número
-    const animal = ["🐲 Dragón", "🦦 Carpincho", "🐂 Toro", "🦄 Unicornio", "🐅 Tigre", "🦁 León", "🦟 Mosquito", "🐺 Lobo", "🦅 Cóndor", "Guanaco", "🐎 Caballo", "🐬 Delfín"];
 
-    //Array de adjetivos según el día de la semana, solicitado en letras pero convertido a números en el switch
-    const adjetivo = ["peludo", "asmático", "petizo", "vegano", "filósofo", "dramático", "insoportable"];
+    //  le pregunto al usuario si desea continuar jugando o no pero con confirm
+    let quiereJugarDeNuevo = confirm("¿Desea volver a jugar?"); 
+
+    //el confirm devuelve true o false, y eso lo uso en el if para saber qué hacer
+    if (quiereJugarDeNuevo === true) {
+        respuesta = "si";
+    } else {
+        respuesta = "no";
+    }
+
+}while (respuesta === "si"); //si el usuario quiere vovler a jugaar el while actúa
+
+
+
+// COSAS QUE HICE ANTES Y MODIFIQUÉ PORQUE NO ME GUSTARON
 
     //Accedo a los arrays y los concateno en la respuesta
-    console.log("Tu animal espiritual es el " + animal[mes-1] + " " + adjetivo[diaSemana] );
+    // console.log("Tu animal espiritual es el " + animal[mes-1] + " " + adjetivo[diaSemana] );
+
+//le consulto al usuario si desea volver a jugar y de nuevo, valído si la resputa es válida
+    // respuesta = prompt("¿Desea vovler a jugar? (si/no)").toLowerCase();
+    // while (respuesta != "si" && respuesta != "no"){
+    //     alert("Debe ingresar una respuesta válida: si o no.");
+    //     respuesta = prompt("¿Desea vovler a jugar? (si/no)").toLowerCase();
+    // }
